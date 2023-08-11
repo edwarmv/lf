@@ -2,6 +2,8 @@
 map ee $$EDITOR "$f"
 map es $sudo $EDITOR "$f"
 
+set hidden true
+
 # File Icons
 set icons
 
@@ -9,6 +11,17 @@ set icons
 map gD cd ~/Downloads
 map gd cd ~/Documents
 map gc cd ~/.config
+
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+
+map <backspace2> delete
 
 # File Previewer
 set previewer ~/.config/lf/pv.sh
