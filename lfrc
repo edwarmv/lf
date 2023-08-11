@@ -6,8 +6,9 @@ map es $sudo $EDITOR "$f"
 set icons
 
 # Movement
-map gdl cd ~/Downloads
-map gd. cd ~/Documents
+map gD cd ~/Downloads
+map gd cd ~/Documents
+map gc cd ~/.config
 
 # File Previewer
 set previewer ~/.config/lf/pv.sh
